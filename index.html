@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>A Little Birthday Surprise ♡</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <a href="#" class="logo">little moments ♡</a>
+
+      <button
+        id="musicBtn"
+        class="music-btn"
+        type="button"
+        aria-pressed="false"
+      >
+        ♫ Play music
+      </button>
+    </header>
+
+    <!-- Background Decorations -->
+    <div class="decorations" aria-hidden="true">
+      <span class="star star-one">✧</span>
+      <span class="star star-two">✦</span>
+      <span class="star star-three">✧</span>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="birthdayMusic" src="music.mp3" loop></audio>
+
+    <main>
+      <!-- WELCOME SCREEN -->
+      <section id="welcomeScreen" class="welcome-screen">
+        <p class="subtitle">A LITTLE SOMETHING FOR YOU</p>
+
+        <div class="gift-container">
+          <div class="gift-icon">🎁</div>
+        </div>
+
+        <h1>
+          For my crazy<br />
+          friend <span>♡</span>
+        </h1>
+
+        <p class="welcome-text">
+          A little page filled with love, memories, and wishes for your special
+          day.
+        </p>
+
+        <button id="surpriseBtn" class="primary-btn" type="button">
+          Open your surprise <span>↗</span>
+        </button>
+
+        <p class="small-note">Made with little magic, just for you bro.</p>
+      </section>
+
+      <!-- BIRTHDAY SURPRISE SCREEN -->
+      <section id="surpriseScreen" class="surprise-screen" hidden>
+        <p class="subtitle">A DAY WORTH CELEBRATING</p>
+
+        <h1 class="birthday-title">Happy Birthday <span>♡</span></h1>
+
+        <p class="birthday-intro">
+          Today is a little reminder of how special you are and how grateful we
+          are to have you in our lives.
+        </p>
+
+        <!-- Birthday Letter -->
+        <article class="message-card">
+          <span class="envelope-icon">✉</span>
+
+          <p class="card-label">A LETTER FOR YOU</p>
+
+          <h2>To my crazy friend.</h2>
+
+          <p>
+            Thank you for the laughter, the silly jokes, the random
+            conversations, and all the memories that have made our friendship so
+            meaningful.
+          </p>
+
+          <p>
+            I hope this new chapter brings you endless happiness, beautiful
+            opportunities, and countless reasons to smile. No matter where life
+            takes us, may we always make time for one another.
+          </p>
+
+          <p>
+            Here's to more adventures, more memories, and more years of
+            friendship together.
+          </p>
+
+          <p class="letter-signature">With sweetness, always ♡</p>
+        </article>
+
+        <!-- Friendship Photo Gallery -->
+        <section class="memories-section">
+          <p class="subtitle">LITTLE MOMENTS, BIG MEMORIES</p>
+
+          <h2>Our little world.</h2>
+
+          <p class="gallery-description">
+            Some moments become memories we'll keep forever.
+          </p>
+
+          <div class="photo-gallery">
+            <figure class="photo-card">
+              <img src="photo1.jpg" alt="A favourite memory with friends" />
+              <figcaption>the days we remember always as friends</figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <img src="photo2.jpg" alt="A happy day spent with friends" />
+              <figcaption>my crazy friend</figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <img src="photo3.jpg" alt="A special friendship memory" />
+              <figcaption>more memories to come ✧</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Final Birthday Wish -->
+        <section class="final-message">
+          <div class="final-decoration">✧ ♡ ✧</div>
+
+          <h2>May life always give you reasons to smile.</h2>
+
+          <p>Keep growing, keep dreaming and keep being you.</p>
+
+          <button id="celebrateBtn" class="primary-btn" type="button">
+            One more celebration ♡
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>made by anis and a little bit of magic</p>
+    </footer>
+
+    <!-- Confetti Container -->
+    <div id="confettiContainer" aria-hidden="true"></div>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,848 @@
+
+/* =====================================
+   LITTLE MOMENTS — BIRTHDAY WEBSITE
+   Minimalist | Modern | Powder Blue
+===================================== */
+
+:root {
+  --background: #fbfcfe;
+  --white: #ffffff;
+  --powder-blue: #e7f0f8;
+  --soft-blue: #cbddec;
+  --blue: #8ba9c4;
+  --navy: #354b63;
+  --text: #718094;
+  --muted: #a4afbd;
+  --border: #e8edf2;
+}
+
+/* =====================================
+   RESET & GENERAL SETTINGS
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* =====================================
+   NAVIGATION BAR
+===================================== */
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  color: var(--navy);
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.65;
+}
+
+.music-btn {
+  padding: 10px 17px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  background: var(--powder-blue);
+  border-color: var(--soft-blue);
+}
+
+/* =====================================
+   BACKGROUND DECORATIONS
+===================================== */
+
+.decorations {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  color: var(--blue);
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.star-one {
+  top: 23%;
+  left: 12%;
+  font-size: 20px;
+}
+
+.star-two {
+  top: 42%;
+  right: 12%;
+  font-size: 25px;
+  animation-delay: 1s;
+}
+
+.star-three {
+  bottom: 17%;
+  left: 18%;
+  font-size: 15px;
+  animation-delay: 2s;
+}
+
+.star-four {
+  top: 65%;
+  right: 18%;
+  font-size: 20px;
+  animation-delay: 1.5s;
+}
+
+/* =====================================
+   COMMON SUBTITLE
+===================================== */
+
+.subtitle {
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   HEADINGS
+===================================== */
+
+h1 {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 6vw, 65px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  margin: 15px 0 22px;
+}
+
+h1 span {
+  display: inline-block;
+  color: var(--blue);
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* =====================================
+   FIRST PAGE — WELCOME SCREEN
+===================================== */
+
+.welcome-screen {
+  position: relative;
+  z-index: 1;
+  min-height: 76vh;
+  max-width: 720px;
+  margin: auto;
+  padding: 45px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* GIFT */
+
+.gift-container {
+  margin: 38px 0 20px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.gift-icon {
+  font-size: 76px;
+  filter: drop-shadow(0 10px 12px #a7bfd333);
+}
+
+/* WELCOME TEXT */
+
+.welcome-text {
+  max-width: 390px;
+  margin-bottom: 30px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.small-note {
+  margin-top: 28px;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.primary-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 25px;
+
+  background: var(--navy);
+  color: var(--white);
+
+  border: 1px solid var(--navy);
+  border-radius: 2px;
+
+  font-size: 12px;
+  letter-spacing: 0.6px;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: transparent;
+  color: var(--navy);
+  transform: translateY(-3px);
+}
+
+.primary-btn span {
+  font-size: 15px;
+}
+
+/* =====================================
+   FIRST PAGE — BIRTHDAY SURPRISE
+===================================== */
+
+.surprise-screen {
+  position: relative;
+  z-index: 1;
+
+  width: calc(100% - 40px);
+  max-width: 900px;
+
+  margin: 35px auto 70px;
+
+  text-align: center;
+  animation: fadeIn 0.8s ease both;
+}
+
+.birthday-title {
+  margin-top: 25px;
+}
+
+.birthday-intro {
+  max-width: 490px;
+  margin: 0 auto;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* =====================================
+   BIRTHDAY LETTER
+===================================== */
+
+.message-card {
+  max-width: 650px;
+  margin: 55px auto 90px;
+  padding: clamp(28px, 6vw, 65px);
+
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+.envelope-icon {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--blue);
+  font-size: 30px;
+}
+
+.card-label {
+  margin-bottom: 20px;
+  color: var(--blue);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.message-card h2 {
+  margin-bottom: 24px;
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.message-card p {
+  max-width: 440px;
+  margin: 17px auto;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.message-card .letter-signature {
+  margin-top: 28px;
+  color: var(--blue);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+/* =====================================
+   PHOTO GALLERY
+===================================== */
+
+.memories-section {
+  padding: 10px 0 85px;
+}
+
+.memories-section h2 {
+  margin: 17px 0;
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.gallery-description {
+  margin-bottom: 35px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.photo-card {
+  margin: 0;
+  padding: 8px 8px 18px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+
+  transition: transform 0.3s ease;
+}
+
+.photo-card:nth-child(2) {
+  margin-top: 25px;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--powder-blue);
+}
+
+.photo-card figcaption {
+  padding: 16px 5px 0;
+  color: var(--text);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =====================================
+   FIRST PAGE — FINAL BIRTHDAY MESSAGE
+===================================== */
+
+.final-message {
+  margin: 15px auto 45px;
+  padding: 55px 20px;
+
+  background: #f0f6fb;
+  border: 1px solid #e5eef6;
+}
+
+.final-decoration {
+  margin-bottom: 22px;
+  color: var(--blue);
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+.final-message h2 {
+  max-width: 470px;
+  margin: 0 auto 20px;
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.final-message p {
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   SECOND PAGE — LONG BIRTHDAY WISH
+===================================== */
+
+.final-wish-screen {
+  position: relative;
+  z-index: 1;
+
+  width: calc(100% - 40px);
+  max-width: 950px;
+
+  min-height: 85vh;
+
+  margin: 35px auto 60px;
+  padding: 75px 35px;
+
+  background: #f0f6fb;
+  border: 1px solid #e5eef6;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  animation: wishAppear 1.2s ease both;
+}
+
+.wish-content {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* WISH DECORATIONS */
+
+.wish-decoration {
+  margin: 30px 0;
+
+  color: var(--blue);
+  font-size: 25px;
+  letter-spacing: 8px;
+
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* WISH MAIN HEADING */
+
+.final-wish-screen h1 {
+  margin: 25px 0;
+
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 65px);
+  font-weight: 400;
+
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+
+/* WISH DIVIDER */
+
+.wish-divider {
+  width: 45px;
+  height: 1px;
+
+  margin: 35px auto;
+
+  background: var(--blue);
+}
+
+/* WISH LETTER HEADING */
+
+.final-wish-screen h2 {
+  margin-bottom: 30px;
+
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+/* WISH PARAGRAPHS */
+
+.final-wish-screen p {
+  max-width: 550px;
+
+  margin: 22px auto;
+
+  color: var(--text);
+
+  font-size: 13px;
+  line-height: 2.2;
+
+  text-align: center;
+}
+
+/* SPECIAL QUOTE */
+
+.final-wish-screen .final-quote {
+  margin: 38px auto;
+  padding: 22px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  border-left: 2px solid var(--soft-blue);
+
+  color: var(--navy);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-style: italic;
+
+  line-height: 1.9;
+}
+
+/* SIGNATURE */
+
+.final-wish-screen .wish-signature {
+  margin: 35px auto;
+
+  color: var(--blue);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+
+  line-height: 2;
+}
+
+.bottom-decoration {
+  margin: 35px 0;
+}
+
+/* SECOND PAGE BACK BUTTON */
+
+.back-btn {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 17px 35px;
+
+  background: var(--navy);
+  color: var(--white);
+
+  border: 1px solid var(--navy);
+  border-radius: 3px;
+
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: transparent;
+  color: var(--navy);
+  transform: translateY(-3px);
+}
+
+/* =====================================
+   CONFETTI ANIMATION
+===================================== */
+
+#confettiContainer {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+
+  border-radius: 2px;
+  opacity: 0.85;
+
+  animation: fall var(--duration, 3s) linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(
+      var(--drift, 0px),
+      105vh,
+      0
+    ) rotate(720deg);
+
+    opacity: 0;
+  }
+}
+
+/* =====================================
+   GENERAL ANIMATIONS
+===================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wishAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 0.9;
+  }
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+  position: relative;
+  z-index: 1;
+
+  padding: 25px 15px 35px;
+
+  color: var(--muted);
+  text-align: center;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 600px) {
+
+  /* Navigation */
+
+  .navbar {
+    padding: 22px 5%;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .music-btn {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  /* Welcome page */
+
+  .welcome-screen {
+    min-height: 72vh;
+    padding: 35px 18px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  /* Birthday surprise */
+
+  .surprise-screen {
+    width: calc(100% - 32px);
+    margin-top: 25px;
+  }
+
+  .message-card {
+    margin: 40px auto 65px;
+  }
+
+  /* Gallery */
+
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .photo-card:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .photo-card img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Final message */
+
+  .final-message {
+    padding: 40px 18px;
+  }
+
+  /* Second birthday page */
+
+  .final-wish-screen {
+    width: calc(100% - 28px);
+    min-height: 80vh;
+
+    margin: 20px auto 40px;
+    padding: 45px 20px;
+  }
+
+  .final-wish-screen h1 {
+    font-size: 43px;
+  }
+
+  .final-wish-screen h2 {
+    font-size: 21px;
+  }
+
+  .final-wish-screen p {
+    font-size: 12px;
+    line-height: 2.1;
+  }
+
+  .final-wish-screen .final-quote {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  /* Decorations */
+
+  .star-two {
+    right: 5%;
+  }
+
+  .star {
+    font-size: 19px;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}

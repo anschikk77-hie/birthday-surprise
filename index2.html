@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>A Little Wish For You ♡</title>
+
+    <!-- Connect Second Page CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header class="navbar">
+      <a href="index.html" class="logo"> little moments ♡ </a>
+    </header>
+
+    <!-- Background Decorations -->
+    <div class="decorations" aria-hidden="true">
+      <span class="star star-one">✧</span>
+      <span class="star star-two">✦</span>
+      <span class="star star-three">✧</span>
+      <span class="star star-four">♡</span>
+    </div>
+
+    <main>
+      <!-- BIRTHDAY WISH PAGE -->
+      <section class="final-wish-screen">
+        <div class="wish-content">
+          <p class="subtitle">A LITTLE NOTE FROM THE HEART</p>
+
+          <div class="wish-decoration">✧ ♡ ✧</div>
+
+          <h1>
+            A little wish<br />
+            for you.
+          </h1>
+
+          <div class="wish-divider"></div>
+
+          <h2>To my crazy friend,</h2>
+
+          <p>
+            Happy Birthday Again Ma Prend! I hope you know how much happiness
+            you bring to the people around you. Life would definitely be a
+            little less interesting without your craziness, random jokes and
+            unforgettable moments.
+          </p>
+
+          <p>
+            As you begin another chapter of your life, I hope you discover new
+            reasons to smile, new places to explore and new dreams worth
+            chasing. May every little thing you wish for slowly find its way to
+            you.
+          </p>
+
+          <p>
+            Thank you for being my friend even though we been enemies before. I
+            hope we can continue to create more memories together. From the
+            random conversations to the silly moments that make absolutely no
+            sense, I hope we never run out of stories to laugh about.
+          </p>
+
+          <p>
+            Remember that you don't have to have everything figured out. Take
+            your time, enjoy the journey, make mistakes, learn new things and
+            never stop believing in yourself. You deserve all the good things
+            that life has to offer.
+          </p>
+
+          <p>
+            No matter how busy life gets or how far our journeys take us, I hope
+            we will always find our way back to these little moments and
+            memories.
+          </p>
+
+          <p>
+            I wish you good health, genuine happiness, endless opportunities and
+            beautiful surprises along the way. May this year be filled with
+            people who appreciate you, moments that make you laugh until your
+            stomach hurts, and dreams that slowly become reality.
+          </p>
+
+          <p class="final-quote">
+            "Here's to another year of laughter, happiness, unexpected
+            adventures and beautiful memories."
+          </p>
+
+          <p class="wish-signature">
+            With lots of effort and energy,<br />
+            your cute and clever friend ♡
+          </p>
+
+          <div class="wish-decoration bottom-decoration">✧ ♡ ✧</div>
+
+          <!-- BACK BUTTON -->
+          <a href="index.html?showMemories=1" class="back-btn">
+            Back to memories ↶
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>made by anis and a little bit of magic ♡</p>
+    </footer>
+
+    <!-- CONFETTI CONTAINER -->
+    <div id="confettiContainer" aria-hidden="true"></div>
+
+    <!-- CONFETTI JAVASCRIPT -->
+    <script>
+      const container = document.getElementById("confettiContainer");
+
+      const colors = ["#DCEAF5", "#B9D2E8", "#8BA9C4", "#F4EAF0", "#FFFFFF"];
+
+      function createConfetti() {
+        for (let i = 0; i < 65; i++) {
+          const piece = document.createElement("span");
+
+          piece.classList.add("confetti");
+
+          // Random horizontal position
+          piece.style.left = Math.random() * 100 + "vw";
+
+          // Random pastel colour
+          piece.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+
+          // Random falling speed
+          piece.style.setProperty("--duration", 3 + Math.random() * 3 + "s");
+
+          // Random sideways movement
+          piece.style.setProperty(
+            "--drift",
+            (Math.random() - 0.5) * 180 + "px",
+          );
+
+          // Random delay
+          piece.style.animationDelay = Math.random() * 1.5 + "s";
+
+          // Confetti size
+          piece.style.width = "6px";
+          piece.style.height = "10px";
+
+          container.appendChild(piece);
+
+          // Remove after animation
+          piece.addEventListener("animationend", function () {
+            piece.remove();
+          });
+        }
+      }
+
+      // Start confetti when page opens
+      createConfetti();
+    </script>
+  </body>
+</html>
